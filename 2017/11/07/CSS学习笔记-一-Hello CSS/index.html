@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>CSS学习笔记(一): Hello CSS | 李雨的个人笔记</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="李雨的博客">
+  <meta name="baidu-site-verification" content="7VtzC7CZhh">
+  <meta name="google-site-verification" content="uldAIOU_5e0mRTgxB8D-Rm_oQJktnP8t3N7j94ZYwv8">
+  <meta name="msvalidate.01" content="2387F6F0858D17A4397180EEEF10B2FE">
+  <meta name="author" content="李雨 LiYu">
+  <meta name="robots" content="index,follow"> 
+  <meta name="google" content="index,follow"> 
+  <meta name="googlebot" content="index,follow">
+  <meta name="description" content="内联样式内联样式定义在HTML标签的style属性中。除了在body外的标签，style属性可以定义在任何一个HTML标签中。1&amp;lt;div style=&quot;color: red;font-size: 14px;&quot;&amp;gt;文字&amp;lt;/div&amp;gt; 这样定义的样式只作用于这个div，不会影响到div以外的内容。内联style属性中只能放CSS样式规则大括号之内的键值对，也不能包含@import指">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS学习笔记(一): Hello CSS">
+<meta property="og:url" content="https://blog.betterliyu.site/2017/11/07/CSS学习笔记-一-Hello CSS/index.html">
+<meta property="og:site_name" content="李雨的个人笔记">
+<meta property="og:description" content="内联样式内联样式定义在HTML标签的style属性中。除了在body外的标签，style属性可以定义在任何一个HTML标签中。1&amp;lt;div style=&quot;color: red;font-size: 14px;&quot;&amp;gt;文字&amp;lt;/div&amp;gt; 这样定义的样式只作用于这个div，不会影响到div以外的内容。内联style属性中只能放CSS样式规则大括号之内的键值对，也不能包含@import指">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-12-09T14:24:59.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS学习笔记(一): Hello CSS">
+<meta name="twitter:description" content="内联样式内联样式定义在HTML标签的style属性中。除了在body外的标签，style属性可以定义在任何一个HTML标签中。1&amp;lt;div style=&quot;color: red;font-size: 14px;&quot;&amp;gt;文字&amp;lt;/div&amp;gt; 这样定义的样式只作用于这个div，不会影响到div以外的内容。内联style属性中只能放CSS样式规则大括号之内的键值对，也不能包含@import指">
+  
+    <link rel="alternative" href="/atom.xml" title="李雨的个人笔记" type="application/atom+xml">
+  
+ 
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="apple-touch-icon-precomposed" href="desktop-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/plugins/normalize.css/normalize.css">
+  <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/themes/red.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+</html>
+<body class="corporate ">
+   <header class="header fixed" id="header">
+	<div class="m-nav" id="navContainer">
+		<div class="container">
+			<div class="mobile-menu" id="mobileMenu">
+				<i class="item"></i>
+				<i class="item"></i>
+				<i class="item"></i>
+			</div>
+			<a href="/" class="u-logo">
+				<img src="/img/logos/logo.svg" alt="BetterLiyu">
+			</a>
+			<nav class="u-nav">
+				<ul class="list">
+					 <!--
+					 <li class="item">
+					 	<a  href="/index.html"><span>博客首页</span></a>
+					 </li>
+					 
+					 <li class="item">
+					 	<a  href="https://www.betterliyu.site"><span>我的主页</span></a>
+					 </li>
+					 -->
+          <li class="item f-lg">
+						<a href="/" title="博客首页"><i class="fa fa-home"></i></a>
+					</li>
+          <li class="item f-lg">
+						<a href="https://www.betterliyu.site" title="我的主页"><i class="fa fa-user"></i></a>
+					</li>
+					<li class="item">
+						<a href="javascript:;" title="搜索文章"><i class="fa fa-search search-btn popup-trigger"></i></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+  <main class="main">
+    <div class="container">
+  <section id="main">
+    
+    <h2 itemprop="name">
+      <a class="article-title" href="/2017/11/07/CSS学习笔记-一-Hello CSS/">CSS学习笔记(一): Hello CSS</a>
+    </h2>
+
+
+    <div class="row">
+<div class="col-md-9 col-sm-9 blog-posts">
+<article id="post-CSS学习笔记-一-Hello CSS" class="article article-type-post blog-item" itemscope itemprop="blogPost">
+  <div class="article-meta">
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      <ul class="blog-info">
+        <li><i class="fa fa-user"></i> 李雨</li>
+        <li><i class="fa fa-calendar"></i>
+          <time datetime="2017-11-07T18:43:05.000Z" itemprop="datePublished">2017/11/07</time>
+
+        </li>
+        
+        <li class><i class="fa fa-tags"></i> 
+          
+  
+    <a href="/tags/CSS/" title="CSS">CSS</a>
+  
+
+
+        </li>
+      </ul>
+      
+  <div class="article-category">
+    
+    分类: 
+    
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+  <br>
+
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="内联样式"><a href="#内联样式" class="headerlink" title="内联样式"></a>内联样式</h2><p>内联样式定义在HTML标签的style属性中。除了在body外的标签，style属性可以定义在任何一个HTML标签中。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"color: red;font-size: 14px;"</span>&gt;</span>文字<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样定义的样式只作用于这个div，不会影响到div以外的内容。内联style属性中只能放CSS样式规则大括号之内的键值对，也不能包含@import指令。通常不推荐使用内联样式，如果这样做的话会使HTML变得混乱，会使CSS灵活性大大的降低。</p>
+<hr>
+<h2 id="style标签"><a href="#style标签" class="headerlink" title="style标签"></a>style标签</h2><p>也可以使用style标签定义样式。它以HTML标签的形式出现在head标签内。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  body &#123;</span></span><br><span class="line"><span class="undefined">    color: red;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="undefined">  div &#123;</span></span><br><span class="line"><span class="undefined">    font-size: 14px;</span></span><br><span class="line"><span class="undefined">  &#125;</span></span><br><span class="line"><span class="undefined">  </span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这样定义的样式作用于全局，标签内定义的样式可以称为文档样式表。其中可以包含多组样式，也可以使用@import指令包含多个样式表链接。</p>
+<h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><ul>
+<li>type: 表示类型，一般值为text/css，描述加载的数据类型，浏览器通过这个属性识别样式表是CSS样式表</li>
+<li>media: 定义当前样式应用的媒体类型，下一章详细说明</li>
+</ul>
+<hr>
+<h2 id="link标签"><a href="#link标签" class="headerlink" title="link标签"></a>link标签</h2><p>link标签用来引用外部样式表，应该优先考虑使用。</p>
+<p>index.html<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"sheet1.css"</span> <span class="attr">title</span>=<span class="string">"Default"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>sheet1.css</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: red;  </span><br><span class="line">&#125;</span><br><span class="line">  </span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这样定义的样式是一个独立的外部文件，通过link标签可以应用到当前的文档中。link标签必须是head标签的子元素。外部样式表中不能包含除CSS规则和CSS注释以外的任何标记，如果出现，会导致部分CSS规则会被忽略。<br>外部样式一般以<code>.css</code>为文件名后缀，也不是必须的。但是一些老版本的浏览器无法识别包含样式表的文件，除非以<code>.css</code>为扩展名。</p>
+<h3 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h3><p>常见的link标签的属性有<code>rel</code>，<code>type</code>，<code>href</code>和<code>media</code>等。这里主要说明和样式相关的属性和属性值。</p>
+<h4 id="rel"><a href="#rel" class="headerlink" title="rel"></a>rel</h4><p>rel属性表示外部文件和当前文档的关系，值通常设置为<code>stylesheet</code>，表示外部文件是样式表。除了<code>stylesheet</code>，rel属性还有其他可选值。</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alternate</td>
+<td>链接到该文档的替代版本（例如打印页、翻译或镜像）</td>
+</tr>
+<tr>
+<td>author</td>
+<td>链接到该文档的作者。</td>
+</tr>
+<tr>
+<td>help</td>
+<td>链接到帮助文档。</td>
+</tr>
+<tr>
+<td>icon</td>
+<td>表示该文档的图标。</td>
+</tr>
+<tr>
+<td>licence</td>
+<td>链接到该文档的版权信息。</td>
+</tr>
+<tr>
+<td>next</td>
+<td>集合中的下一个文档。</td>
+</tr>
+<tr>
+<td>pingback</td>
+<td>指向 pingback 服务器的 URL。</td>
+</tr>
+<tr>
+<td>prefetch</td>
+<td>规定应该对目标文档进行缓存。</td>
+</tr>
+<tr>
+<td>prev</td>
+<td>集合中的前一个文档。</td>
+</tr>
+<tr>
+<td>search</td>
+<td>链接到针对文档的搜索工具。</td>
+</tr>
+<tr>
+<td>sidebar</td>
+<td>链接到应该显示在浏览器侧栏的文档。</td>
+</tr>
+<tr>
+<td>stylesheet</td>
+<td>指向要导入的样式表的 URL。</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>描述当前文档的标签（关键词）。</td>
+</tr>
+</tbody>
+</table>
+<p>这里要特地说明的是<code>alternate</code>，可以利用这一属性设置网页候选样式<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"alternate stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"sheet1.css"</span> <span class="attr">title</span>=<span class="string">"Default"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>像上面的代码一样，设置<code>rel=&quot;alternate stylesheet&quot;</code>，同时设置title属性，就会有一个主题为<code>Default</code>的候选样式供选择。大多数Geckco内核的浏览器支持这一功能，你可以在火狐浏览器“查看&gt;页面样式”菜单中找到。<code>title</code>属性是全局属性，每个标签都可以定义，但是定义在link标签中则表示样式的主题，也可以定义多个同一主题文件。</p>
+<h4 id="type"><a href="#type" class="headerlink" title="type"></a>type</h4><p>type属性表示类型文件，值通常为<code>text/css</code>，描述加载的文件类型，浏览器通过这个属性识别样式表是CSS样式表。</p>
+<h4 id="href"><a href="#href" class="headerlink" title="href"></a>href</h4><p>href属性表示样式文件的URL，可以是绝对路径也可以是相对路径。</p>
+<h4 id="hreflang"><a href="#hreflang" class="headerlink" title="hreflang"></a>hreflang</h4><p>hreflang属性表示链接文档的语言类型。</p>
+<h4 id="media"><a href="#media" class="headerlink" title="media"></a>media</h4><p>media属性表示当前样式将要应用到什么样的媒体设备上。它的值需要符合媒体查询列表的格式。现代Web浏览器主要支持媒体类型的值主要是<code>all</code>，<code>screen</code>和<code>print</code>，在全屏模式中，Opera 也支持 <code>projection</code>属性值。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 表示在屏幕设备上应用该样式，其他媒体类型无效 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"sheet1.css"</span> <span class="attr">media</span>=<span class="string">"screen"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>也可以设置多个值<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 表示在屏幕设备上和打印时应用该样式，其他媒体类型无效 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"sheet1.css"</span> <span class="attr">media</span>=<span class="string">"screen, print"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><code>all</code>表示所有设备都使用该样式，其他不常用的值有：</p>
+<ul>
+<li><code>aural</code>：用于语音合成器，屏幕阅读器和文档的其他声音表现</li>
+<li><code>braille</code>：用Braille设备表现文档时使用</li>
+<li><code>embossed</code>：用Braille打印设备打印时使用</li>
+<li><code>handheld</code>：用于手持设备，如个人数字助理或支持Web的蜂窝电话</li>
+<li><code>projection</code>：用于投影媒体</li>
+<li><code>tty</code>：在固定间距环境中（如电传打字机）显示文档时使用</li>
+<li><code>tv</code>：在电视上显示文档时使用</li>
+</ul>
+<p>HTML5之后，这个属性可以设置更多的值，值必须是media query list。参照CSS3的媒体查询。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 表示在屏幕设备上和打印时应用该样式，其他媒体类型无效 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"sheet1.css"</span> <span class="attr">media</span>=<span class="string">"screen, print"</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>可能的操作符</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>and</td>
+<td>规定 AND 操作符</td>
+</tr>
+<tr>
+<td>not</td>
+<td>规定 NOT 操作符</td>
+</tr>
+<tr>
+<td>,</td>
+<td>规定 OR 操作符</td>
+</tr>
+</tbody>
+</table>
+<p><strong>设备</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>all</td>
+<td>默认。适用于所有设备。</td>
+</tr>
+<tr>
+<td>aural</td>
+<td>语音合成器。</td>
+</tr>
+<tr>
+<td>braille</td>
+<td>盲文反馈装置。</td>
+</tr>
+<tr>
+<td>handheld</td>
+<td>手持设备（小屏幕、有限的带宽）。</td>
+</tr>
+<tr>
+<td>projection</td>
+<td>投影机。</td>
+</tr>
+<tr>
+<td>print</td>
+<td>打印预览模式/打印页。</td>
+</tr>
+<tr>
+<td>screen</td>
+<td>计算机屏幕。</td>
+</tr>
+<tr>
+<td>tty</td>
+<td>电传打字机以及类似的使用等宽字符网格的媒介。</td>
+</tr>
+<tr>
+<td>tv</td>
+<td>电视类型设备（低分辨率、有限的滚屏能力）。</td>
+</tr>
+</tbody>
+</table>
+<p><strong>属性值</strong></p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>width</td>
+<td>规定目标显示区域的宽度。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (min-width:500px)&quot;</code></td>
+</tr>
+<tr>
+<td>height</td>
+<td>规定目标显示区域的高度。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (max-height:700px)&quot;</code></td>
+</tr>
+<tr>
+<td>device-width</td>
+<td>规定目标显示器/纸张的宽度。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (device-width:500px)&quot;</code></td>
+</tr>
+<tr>
+<td>device-height</td>
+<td>规定目标显示器/纸张的高度。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (device-height:500px)&quot;</code></td>
+</tr>
+<tr>
+<td>orientation</td>
+<td>规定目标显示器/纸张的方向。可能的值：”portrait” or “landscape”例子：<code>media=&quot;all and (orientation: landscape)&quot;</code></td>
+</tr>
+<tr>
+<td>aspect-ratio</td>
+<td>规定目标显示区域的宽度/高度比可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (aspect-ratio:16/9)&quot;</code></td>
+</tr>
+<tr>
+<td>device-aspect-ratio</td>
+<td>规定目标显示器/纸张的 device-width/device-height 比率可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (aspect-ratio:16/9)&quot;</code></td>
+</tr>
+<tr>
+<td>color</td>
+<td>规定目标显示器的 bits/color。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (color:3)&quot;</code></td>
+</tr>
+<tr>
+<td>color-index</td>
+<td>规定目标显示器可以处理的颜色数。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (min-color-index:256)&quot;</code></td>
+</tr>
+<tr>
+<td>monochrome</td>
+<td>规定单色帧缓冲中的 bits/pixel。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;screen and (monochrome:2)&quot;</code></td>
+</tr>
+<tr>
+<td>resolution</td>
+<td>规定目标显示器/纸张的像素密度 (dpi 或 dpcm)。可使用 “min-“ 和 “max-“ 前缀。例子：<code>media=&quot;print and (resolution:300dpi)&quot;</code></td>
+</tr>
+<tr>
+<td>scan</td>
+<td>规定 tv 显示器的扫描方式。可能的值：”progressive” 和 “interlace”。例子：<code>media=&quot;tv and (scan:interlace)&quot;</code></td>
+</tr>
+<tr>
+<td>grid</td>
+<td>规定输出设备是否是网格或位图。可能的值：”1” 为网格，否则为 “0”。例子：<code>media=&quot;handheld and (grid:1)&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 表示在宽度大于768px的屏幕设备上应用该样式，其他媒体类型无效 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span> <span class="attr">href</span>=<span class="string">"sheet1.css"</span> <span class="attr">media</span>=<span class="string">"screen and (min-width:768px)"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="import"><a href="#import" class="headerlink" title="@import"></a>@import</h2><p>@import指令用来从外部加载样式文件，类似link标签，但是和link标签还是有很多区别的。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 以下三种方式都是正确的，相对路径和绝对路径都可以*/</span></span><br><span class="line"><span class="comment">/* 1 */</span></span><br><span class="line">@<span class="keyword">import</span> url(sheet2.css);</span><br><span class="line"><span class="comment">/* 2 */</span></span><br><span class="line">@<span class="keyword">import</span> url(<span class="string">"sheet2.css"</span>);</span><br><span class="line"><span class="comment">/* 3 */</span></span><br><span class="line">@<span class="keyword">import</span> sheet2.css;</span><br></pre></td></tr></table></figure></p>
+<p>@import指令只能用于style标签内或者css样式文件中，并且必须出现在其他的css规则之前，否则浏览器可能会忽略@import指令。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">import</span> url(index02.css);</span><br></pre></td></tr></table></figure></p>
+<p>上面代码中@import指令将会被忽略。</p>
+<p>只要是通过@import指令正确导入的外部样式表都会加载，无法指定候选样式表，但是可以指定media媒体类型，直接在后面添加查询条件即可。<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">import</span> url(index02.css) screen and (min-width:<span class="number">768px</span>);</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="link和-import的区别"><a href="#link和-import的区别" class="headerlink" title="link和@import的区别"></a>link和@import的区别</h2><ol>
+<li>最主要的区别在于lin是属于XHTML标签，除了可以引用样式文件，还可以引用icon等资源，详见rel属性，而@import则是css2.1中的语法特性，只能引用css</li>
+<li>加载顺序不同，link加载的css时，是一种并行加载CSS方式，而@import则在整个页面加载完成后才加载</li>
+<li>兼容性的区别，@import是CSS2.1才特有的，部分浏览器不支持</li>
+<li>link标签可以通过javascript控制，而@import不能</li>
+</ol>
+
+      
+    </div>
+  </div>
+  
+    
+  <nav id="article-nav" class="article-nav-wrap">
+    
+      <a href="/2017/11/02/bwidget-timespinner配置文档/" id="article-nav-older" class="article-nav-link-wrap" style="float:left;">
+        <strong class="article-nav-caption">上一篇:</strong>
+        <span class="article-nav-title">
+          bwidget-timespinner配置文档
+        </span>
+      </a>
+      
+        
+          <a href="/2018/05/17/CSS学习笔记-二-overflow/" id="article-nav-newer" class="article-nav-link-wrap" style="float:right;">
+            <strong class="article-nav-caption">下一篇:</strong>
+            <span class="article-nav-title">
+              
+                CSS学习笔记(二): overflow
+                  
+            </span>
+          </a>
+          
+
+  </nav>
+  
+  
+  <br>
+</article>
+
+
+
+</div>
+<div class="col-md-3 col-sm-3  sidebar-wrap wrapper">
+  <div class="blog-sidebar sub-wrapper">
+    <div class="scroller">
+      <div class="nav">
+  <a href="/">博客首页</a>
+  <span class="sep"></span>
+  <a href="https://www.betterliyu.site">我的主页</a>
+</div>
+
+<!-- CATEGORIES START -->
+<h2 class="no-top-space">分类</h2>
+
+<div class="widget-wrap">
+  <div class="widget">
+    <ul class="sidebar-categories-list"><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/CSS/">CSS</a><span class="sidebar-categories-list-count">2</span></li><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/JavaScript/">JavaScript</a><span class="sidebar-categories-list-count">2</span></li><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/个人项目/">个人项目</a><span class="sidebar-categories-list-count">1</span></li><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/开发工具/">开发工具</a><span class="sidebar-categories-list-count">1</span></li></ul>
+  </div>
+</div>
+
+
+<!-- CATEGORIES END -->
+
+<!-- BEGIN BLOG TAGS -->
+<div class="blog-tags margin-bottom-20">
+  <h2>标签</h2>
+  
+  <div class="widget-wrap">
+    <div class="widget">
+      
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/"><i class="fa fa-tags"></i>AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/"><i class="fa fa-tags"></i>CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome-devtool/"><i class="fa fa-tags"></i>chrome devtool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/"><i class="fa fa-tags"></i>debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timespinner/"><i class="fa fa-tags"></i>timespinner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数式编程/"><i class="fa fa-tags"></i>函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/柯里化/"><i class="fa fa-tags"></i>柯里化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/"><i class="fa fa-tags"></i>移动端</a></li></ul>
+    </div>
+  </div>
+
+
+</div>
+<!-- END BLOG TAGS -->
+
+
+<!-- BEGIN FEATURED POSTS -->                            
+<h2>精选</h2>
+<div class="recent-news margin-bottom-10">
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+        
+        <div class="col-md-12">
+          <h3><a href="/2017/11/02/bwidget-timespinner配置文档/">bwidget-timespinner配置文档</a></h3>
+        </div>    
+                            
+      </div>
+    
+  
+    
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+        
+        <div class="col-md-12">
+          <h3><a href="/2017/07/15/AngularJS学习笔记-Provider和Service/">AngularJS学习笔记：Provider和Service</a></h3>
+        </div>    
+                            
+      </div>
+    
+  
+    
+  
+</div>
+
+
+  <h2 class="toc-title">目录</h2>
+  <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#内联样式"><span class="toc-text">内联样式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#style标签"><span class="toc-text">style标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#link标签"><span class="toc-text">link标签</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性-1"><span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#rel"><span class="toc-text">rel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#type"><span class="toc-text">type</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#href"><span class="toc-text">href</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#hreflang"><span class="toc-text">hreflang</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#media"><span class="toc-text">media</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#import"><span class="toc-text">@import</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#link和-import的区别"><span class="toc-text">link和@import的区别</span></a></li></ol>
+    <div class="highlight-title"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+  </section>
+</div>
+
+  </main>
+  <aside class="site-search">
+<div data-overlay id="algoliaSearch">
+  <div class="modal-content algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <span class="algolia-logo algolia-powered">
+      <a href="https://www.algolia.com/" target="_blank">
+				<img src="/img/algolia-logo.png" alt="Algolia">
+			</a>
+    </span>
+  </div>
+  </div>
+</aside>
+
+  <aside class="wechat-qr-code">
+  <div data-overlay id="wechatQRCcode">
+    <div class="modal-content wechat-modal-content wechat">
+      <i class="close fa fa-close" id="hideWeChat"></i>
+      <img src="/img/wechat-qr-code.jpeg" class="qr-code">
+    </div>
+  </div>
+</aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="copyright">
+      <a href class="u-logo">
+        <img src="/img/logos/logo.svg" alt="BetterLiyu">
+      </a>
+      <span class="text">© 2018 Li Yu</span>
+      <span class="text powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></span>
+      <span class="text powered"><span>Hosted by <a href="https://pages.github.com/" target="_blank">Github Pages</a></span></span>
+    </div>
+    <div class="contact">
+      <ul class="list">
+        <li class="item">
+          <a href="https://github.com/betterliyu" target="_blank" title="betterliyu">
+          	<img src="/img/github.svg" alt="BetterLiyu">
+          </a>
+        </li>
+        <li class="item">
+          <a href="https://www.linkedin.com/in/betterliyu" target="_blank" title="李雨">
+          	<img src="/img/linkedin.svg" alt="BetterLiyu">
+          </a>
+        </li>
+        <li class="item">
+          <a href="javascript:;" title="liyu3285" id="showWeChat">
+          	<img src="/img/wechat.svg" alt="BetterLiyu">
+          </a>
+        </li>
+        <li class="item">
+          <a href="mailto:liyu@betterliyu.site" title="liyu@betterliyu.site">
+            <img src="/img/email.svg" alt="BetterLiyu">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container copy">
+    
+  </div>
+</footer>
+  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+<script src="/plugins/jquery.min.js"></script>
+<script src="/plugins/jquery-migrate.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/plugins/owl.carousel/owl.carousel.min.js"></script>
+<script src="/js/back-to-top.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/wechat-code.js"></script>
+<script src="/js/mobile-sidebar.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/wow.min.js"></script>
+
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        Layout.init();    
+        Layout.initOWL();
+        Layout.initTwitter();
+        if ($('body').hasClass('home')) {
+          Layout.initHeaderScroll();
+          Layout.changeScrollIconDirection();
+        } else {
+          // Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+          // Layout.initNavScrolling(); 
+          Layout.initTocScrolling(); 
+        }
+
+        $('.toc-link').on('click', () => {
+          if($('.sidebar-wrap').hasClass('show')) {
+            $('#mobileMenu').click();
+          }
+        });
+	    new WOW().init();
+    });
+</script>
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN INTEGRATIONS -->
+
+
+
+    <script src="/plugins/algoliasearch/algoliasearch.jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+    <script>
+        var algolia_config = {
+            root: '/',
+            algolia: {
+            applicationID: '2QMFGDTPT4',
+                apiKey: '290e0d706ec2e78e93dd972abe43a628',
+                indexName: 'blog_index',
+                hits: {"per_page": 15},
+                labels: {"input_placeholder": "搜索文章...","hits_empty":"No results found.","hits_stats":"${hits} records found in ${time} ms"}
+            }
+        };
+    </script>
+    <script src="/js/algolia-search.js"></script>
+
+
+
+
+
+<!-- END INTEGRATIONS -->
+
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    function CaoNiMaDeUc() {
+        $("a").each(function (index, element) {
+            try {
+                var thishref = $(this).attr("href");
+                var thisText = $(this).html();
+                if (thishref.indexOf("uc.cn") >= 0) {
+                    $(this).replaceWith(thisText);
+                }
+            }
+            catch (e) {
+            }
+        });
+        $("script").each(function (index, element) {
+            try {
+                var thissrc = $(this).attr("src");
+
+                if (thissrc.indexOf("ucbrowser") >= 0) {
+                $(this).remove();
+                }
+            }
+            catch (e) {
+            }
+        });
+    };
+    
+    var pageDATA_ua = window.navigator.userAgent.toLowerCase();
+    if(pageDATA_ua.indexOf('ucbrowser')>=0){setInterval("CaoNiMaDeUc();",1000);}
+});
+</script>
+</body>
+</html>

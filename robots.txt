@@ -1,0 +1,13 @@
+
+# robots.txt
+User-agent: *
+Allow: /
+Allow: /archives/ 
+Allow: /categories/ 
+Allow: /tags/ 
+Disallow: /js/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /plugins/
+Sitemap: https://blog.betterliyu.site/sitemap.xml
+Sitemap: https://blog.betterliyu.site/baidusitemap.xml

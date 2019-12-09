@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="zh">
+<!--<![endif]-->
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>CSS学习笔记(二): overflow | 李雨的个人笔记</title>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0" name="viewport">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="李雨的博客">
+  <meta name="baidu-site-verification" content="7VtzC7CZhh">
+  <meta name="google-site-verification" content="uldAIOU_5e0mRTgxB8D-Rm_oQJktnP8t3N7j94ZYwv8">
+  <meta name="msvalidate.01" content="2387F6F0858D17A4397180EEEF10B2FE">
+  <meta name="author" content="李雨 LiYu">
+  <meta name="robots" content="index,follow"> 
+  <meta name="google" content="index,follow"> 
+  <meta name="googlebot" content="index,follow">
+  <meta name="description" content="overflow 基本概念overflow在内容超出自身尺寸时，决定内容将如何显示。  visible (默认) hidden 隐藏超出部分 scroll 始终出现滚动条 auto 浏览器决定 inherit (IE8+) 继承  overflow-x 和 overflow-y (IE8+)取值和overflow一致，并分别作用于x轴和y轴。  注意：如果overflow-x和overflow-y">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CSS学习笔记(二): overflow">
+<meta property="og:url" content="https://blog.betterliyu.site/2018/05/17/CSS学习笔记-二-overflow/index.html">
+<meta property="og:site_name" content="李雨的个人笔记">
+<meta property="og:description" content="overflow 基本概念overflow在内容超出自身尺寸时，决定内容将如何显示。  visible (默认) hidden 隐藏超出部分 scroll 始终出现滚动条 auto 浏览器决定 inherit (IE8+) 继承  overflow-x 和 overflow-y (IE8+)取值和overflow一致，并分别作用于x轴和y轴。  注意：如果overflow-x和overflow-y">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-12-09T14:24:59.320Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="CSS学习笔记(二): overflow">
+<meta name="twitter:description" content="overflow 基本概念overflow在内容超出自身尺寸时，决定内容将如何显示。  visible (默认) hidden 隐藏超出部分 scroll 始终出现滚动条 auto 浏览器决定 inherit (IE8+) 继承  overflow-x 和 overflow-y (IE8+)取值和overflow一致，并分别作用于x轴和y轴。  注意：如果overflow-x和overflow-y">
+  
+    <link rel="alternative" href="/atom.xml" title="李雨的个人笔记" type="application/atom+xml">
+  
+ 
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  <link rel="apple-touch-icon-precomposed" href="desktop-icon.png">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|PT+Sans+Narrow|Source+Sans+Pro:200,300,400,600,700,900&amp;subset=all" rel="stylesheet" type="text/css">
+
+  <link rel="stylesheet" href="/plugins/normalize.css/normalize.css">
+  <link rel="stylesheet" href="/plugins/font-awesome/css/font-awesome.css">
+  <link rel="stylesheet" href="/plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/themes/red.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+</html>
+<body class="corporate ">
+   <header class="header fixed" id="header">
+	<div class="m-nav" id="navContainer">
+		<div class="container">
+			<div class="mobile-menu" id="mobileMenu">
+				<i class="item"></i>
+				<i class="item"></i>
+				<i class="item"></i>
+			</div>
+			<a href="/" class="u-logo">
+				<img src="/img/logos/logo.svg" alt="BetterLiyu">
+			</a>
+			<nav class="u-nav">
+				<ul class="list">
+					 <!--
+					 <li class="item">
+					 	<a  href="/index.html"><span>博客首页</span></a>
+					 </li>
+					 
+					 <li class="item">
+					 	<a  href="https://www.betterliyu.site"><span>我的主页</span></a>
+					 </li>
+					 -->
+          <li class="item f-lg">
+						<a href="/" title="博客首页"><i class="fa fa-home"></i></a>
+					</li>
+          <li class="item f-lg">
+						<a href="https://www.betterliyu.site" title="我的主页"><i class="fa fa-user"></i></a>
+					</li>
+					<li class="item">
+						<a href="javascript:;" title="搜索文章"><i class="fa fa-search search-btn popup-trigger"></i></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+  <main class="main">
+    <div class="container">
+  <section id="main">
+    
+    <h2 itemprop="name">
+      <a class="article-title" href="/2018/05/17/CSS学习笔记-二-overflow/">CSS学习笔记(二): overflow</a>
+    </h2>
+
+
+    <div class="row">
+<div class="col-md-9 col-sm-9 blog-posts">
+<article id="post-CSS学习笔记-二-overflow" class="article article-type-post blog-item" itemscope itemprop="blogPost">
+  <div class="article-meta">
+  </div>
+  <div class="article-inner">
+    
+    
+    <header class="article-header">
+      <ul class="blog-info">
+        <li><i class="fa fa-user"></i> 李雨</li>
+        <li><i class="fa fa-calendar"></i>
+          <time datetime="2018-05-17T18:43:05.000Z" itemprop="datePublished">2018/05/17</time>
+
+        </li>
+        
+        <li class><i class="fa fa-tags"></i> 
+          
+  
+    <a href="/tags/CSS/" title="CSS">CSS</a>
+  
+
+
+        </li>
+      </ul>
+      
+  <div class="article-category">
+    
+    分类: 
+    
+    <a class="article-category-link" href="/categories/CSS/">CSS</a>
+  </div>
+  <br>
+
+
+    </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="overflow-基本概念"><a href="#overflow-基本概念" class="headerlink" title="overflow 基本概念"></a>overflow 基本概念</h2><p>overflow在内容超出自身尺寸时，决定内容将如何显示。</p>
+<ul>
+<li>visible (默认)</li>
+<li>hidden 隐藏超出部分</li>
+<li>scroll 始终出现滚动条</li>
+<li>auto 浏览器决定</li>
+<li>inherit (IE8+) 继承</li>
+</ul>
+<h3 id="overflow-x-和-overflow-y-IE8"><a href="#overflow-x-和-overflow-y-IE8" class="headerlink" title="overflow-x 和 overflow-y (IE8+)"></a>overflow-x 和 overflow-y (IE8+)</h3><p>取值和overflow一致，并分别作用于x轴和y轴。</p>
+<blockquote>
+<p>注意：如果overflow-x和overflow-y的值不同，其中一个visible，另外一个为非visible，则visible会被重置为auto。  </p>
+</blockquote>
+<h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><p>容器需要满足以下条件，overflow才能起作用  </p>
+<ul>
+<li>非display: inline;</li>
+<li>对应方位的尺寸限制。width/height/max-width/man-height/absolute拉伸</li>
+<li>对于单元格td等。还需要<code>table</code>属性为<code>table-layout: fixed</code>;</li>
+</ul>
+<h3 id="viewport-html-和-body-的overflow"><a href="#viewport-html-和-body-的overflow" class="headerlink" title="viewport, html 和 body 的overflow"></a>viewport, html 和 body 的overflow</h3><p>当我们通过检查元素查看最外层的滚动条时，会发现它既不会被包含在body内部也不会被包含在html元素内。这是因为这个滚动条是viewport提供给我们的，而且渲染的机制也不单纯。看<a href="https://www.w3.org/TR/CSS2/visufx.html#q11.0" target="_blank" rel="noopener">规范</a>：</p>
+<blockquote>
+<p>UAs must apply the ‘overflow’ property set on the root element to the viewport. When the root element is an HTML “HTML” element or an XHTML “html” element, and that element has an HTML “BODY” element or an XHTML “body” element as a child, user agents must instead apply the ‘overflow’ property from the first such child element to the viewport, if the value on the root element is ‘visible’. The ‘visible’ value when used for the viewport must be interpreted as ‘auto’. The element from which the value is propagated must have a used value for ‘overflow’ of ‘visible’.</p>
+</blockquote>
+<p>看着有点费解，大体可以理解为四点：</p>
+<ol>
+<li>直接将根元素（通常为html）的overflow属性应用到viewport上；</li>
+<li>如果根元素是html，body是html子元素，并且html元素overflow为<code>visible</code>，则会将第一个body元素的overflow属性应用到viewport上；</li>
+<li>viewport上overflow: <code>visible</code>会被当做<code>auto</code>;</li>
+<li>如果触发了第二条，body元素的overflow值将使用 <code>visible</code>渲染。</li>
+</ol>
+<hr>
+<h2 id="overflow-与滚动条"><a href="#overflow-与滚动条" class="headerlink" title="overflow 与滚动条"></a>overflow 与滚动条</h2><p>当overflow值为auto/scroll，并且内容尺寸超过容器尺寸限制时会出现滚动条。</p>
+<h3 id="滚动条的样式在各个浏览器中有一定的差异。"><a href="#滚动条的样式在各个浏览器中有一定的差异。" class="headerlink" title="滚动条的样式在各个浏览器中有一定的差异。"></a>滚动条的样式在各个浏览器中有一定的差异。</h3><blockquote>
+<p>获取滚动条的宽度：宽度 - 可视区域宽度(clientWidth)<br>   结果：IE11/Chrome/Firefox(win10)：17px；Edge：16px  </p>
+</blockquote>
+<blockquote>
+<p>注意：滚动条出现之后容器大小会发生变化，可能会导致另外一个方向也出现滚动条。</p>
+</blockquote>
+<h3 id="自定义滚动条"><a href="#自定义滚动条" class="headerlink" title="自定义滚动条"></a>自定义滚动条</h3><h4 id="webkit"><a href="#webkit" class="headerlink" title="webkit"></a>webkit</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>::-webkit-scrollbar</code></td>
+<td>整体部分  </td>
+</tr>
+<tr>
+<td><code>::-webkit-scrollbar-button</code></td>
+<td>两端按钮   </td>
+</tr>
+<tr>
+<td><code>::-webkit-scrollbar-track</code></td>
+<td>外层轨道   </td>
+</tr>
+<tr>
+<td><code>::-webkit-scrollbar-track-piece</code></td>
+<td>内层轨道   </td>
+</tr>
+<tr>
+<td><code>::-webkit-scrollbar-thumb</code></td>
+<td>滚动滑块 </td>
+</tr>
+<tr>
+<td><code>::-webkit-scrollbar-corner</code></td>
+<td>边角       </td>
+</tr>
+<tr>
+<td><code>::-webkit-resizer</code></td>
+<td>右下角拖动块</td>
+</tr>
+</tbody>
+</table>
+<h4 id="IE"><a href="#IE" class="headerlink" title="IE"></a>IE</h4><p>IE下只能修改滚动条的颜色。</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义 </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>scrollbar-arrow-color: color;</code></td>
+<td>三角箭头的颜色 </td>
+</tr>
+<tr>
+<td><code>scrollbar-face-color: color;</code></td>
+<td>立体滚动条的颜色（包括箭头部分的背景色）</td>
+</tr>
+<tr>
+<td><code>scrollbar-3dlight-color: color;</code></td>
+<td>立体滚动条亮边的颜色</td>
+</tr>
+<tr>
+<td><code>scrollbar-highlight-color: color;</code></td>
+<td>滚动条的高亮颜色</td>
+</tr>
+<tr>
+<td><code>scrollbar-shadow-color: color;</code></td>
+<td>立体滚动条阴影的颜色</td>
+</tr>
+<tr>
+<td><code>scrollbar-darkshadow-color: color;</code></td>
+<td>立体滚动条外阴影的颜色</td>
+</tr>
+<tr>
+<td><code>scrollbar-track-color: color;</code></td>
+<td>立体滚动条背景颜色</td>
+</tr>
+<tr>
+<td><code>scrollbar-base-color:color;</code></td>
+<td>滚动条的基色</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>iOS原生滚动bounce效果: <code>-webkit-overflow-scrolling: touch</code></p>
+</blockquote>
+<h3 id="javascript-控制滚动"><a href="#javascript-控制滚动" class="headerlink" title="javascript 控制滚动"></a>javascript 控制滚动</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取滚动条位置</span></span><br><span class="line"><span class="comment">// 标准模式</span></span><br><span class="line"><span class="keyword">var</span> top = <span class="built_in">document</span>.documentElement.scrollTop;</span><br><span class="line"><span class="keyword">var</span> left = <span class="built_in">document</span>.documentElement.scrollLeft;</span><br><span class="line"><span class="comment">// 怪异模式</span></span><br><span class="line"><span class="keyword">var</span> top = <span class="built_in">document</span>..scrollTop;</span><br><span class="line"><span class="keyword">var</span> left = <span class="built_in">document</span>.body.scrollLeft;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置滚动条位置</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.scrollTop = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">document</span>.body.scrollTop = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">window</span>.scrollTo(<span class="number">100</span>, <span class="number">0</span>);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意: 即使设置了值为hidden，也可以通过js使内容滚动。</p>
+</blockquote>
+<h3 id="竖直滚动条导致固定宽度水平居中跳动的问题"><a href="#竖直滚动条导致固定宽度水平居中跳动的问题" class="headerlink" title="竖直滚动条导致固定宽度水平居中跳动的问题"></a>竖直滚动条导致固定宽度水平居中跳动的问题</h3><p>两中方式可以避免这种问题：</p>
+<ol>
+<li>始终出现滚动条<br><code>html { overflow-y: scroll }</code>  </li>
+<li>居中元素的父元素设置margin或padding<br><code>padding-left: calc(100vw - 100%);</code><br><code>margin-left: calc(100vw - 100%);</code><br>100vw: 浏览器宽度；<br>100%: 可用内容宽度</li>
+</ol>
+<p>查看<a href="https://sample.betterliyu.site/css-note/overflow/horizontal_center_fixed_width_element_shake.html" target="_blank" rel="noopener">demo</a></p>
+<hr>
+<h2 id="overflow-与-BFC"><a href="#overflow-与-BFC" class="headerlink" title="overflow 与 BFC"></a>overflow 与 BFC</h2><p>值为 <code>auto</code>, <code>scroll</code> 和 <code>hidden</code> 可以触发 BFC，<code>visible</code> 不可以。一般常见的有以下三种应用场景：  </p>
+<ul>
+<li>清除浮动</li>
+<li>避免margin穿透问题</li>
+<li>两栏自适应布局</li>
+</ul>
+<h3 id="清除浮动"><a href="#清除浮动" class="headerlink" title="清除浮动"></a>清除浮动</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span> &#123; <span class="attribute">overflow</span>: hidden; <span class="attribute">_zoom</span>: <span class="number">1</span> &#125;</span><br></pre></td></tr></table></figure>
+<p>以上写法有弊端，会隐藏超出容器的元素，一般这样写：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.clearfix &#123; *zoom: 1 &#125;</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123; <span class="attribute">content</span>: <span class="string">''</span>; <span class="attribute">display</span>: table; <span class="attribute">clear</span>: both; &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="避免-margin-穿透"><a href="#避免-margin-穿透" class="headerlink" title="避免 margin 穿透"></a>避免 margin 穿透</h3><p>任何触发BFC的行为都可以避免margin穿透。</p>
+<h3 id="两栏自适应布局"><a href="#两栏自适应布局" class="headerlink" title="两栏自适应布局"></a>两栏自适应布局</h3><p>利用BFC的特性实现两栏自适应布局。</p>
+<p>html代码<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"right"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>css代码<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.left</span> &#123;</span><br><span class="line">  <span class="attribute">float</span>: left;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> &#123;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">100%</span>;</span><br><span class="line">  <span class="attribute">padding-left</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>查看<a href="https://sample.betterliyu.site/css-note/overflow/two_column_layout.html" target="_blank" rel="noopener">demo</a></p>
+<h2 id="overflow-与-absolute-绝对定位"><a href="#overflow-与-absolute-绝对定位" class="headerlink" title="overflow 与 absolute 绝对定位"></a>overflow 与 absolute 绝对定位</h2><p>当overflow元素处于absolute元素和absolute元素的包含块之间时，会导致overflow元素剪裁或滚动失效。HTML基本结构如下：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span>        <span class="comment">&lt;!-- absolute元素的包含块 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>       <span class="comment">&lt;!-- overflow元素 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span>/&gt;</span>    <span class="comment">&lt;!-- absolute元素 --&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>剪裁失效</p>
+<iframe height="300" src="https://sample.betterliyu.site/css-note/overflow/overflow_absolute_not_clip.html"></iframe>
+</li>
+<li><p>滚动失效</p>
+<iframe height="400" src="https://sample.betterliyu.site/css-note/overflow/overflow_absolute_not_scroll.html"></iframe>
+
+<blockquote>
+<p>可以利用这样的特性来实现在scroll元素内部固定定位（类似于fixed）的效果。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="overflow-其他小技巧和问题"><a href="#overflow-其他小技巧和问题" class="headerlink" title="overflow 其他小技巧和问题"></a>overflow 其他小技巧和问题</h2><p>overflow不仅仅可以控制是否出现滚动条，还有其他意想不到的效果。</p>
+<ul>
+<li><p>IE6下，固定按钮padding<br>IE6浏览器下，文字越多，按钮两侧padding留白就越大，设置visible后padding就不会变大了。</p>
+</li>
+<li><p>overflow的padding-bottom缺失现象<br>非Chrome浏览器中，如果容器出现竖直滚动条并且有padding-bottom，会被忽略。<br>html代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"wrap"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>css代码</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="selector-class">.wrap</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">padding-bottom</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid gray;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.content</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">100px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">  <span class="attribute">background-color</span>:cornflowerblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果：</p>
+<iframe height="320" src="https://sample.betterliyu.site/css-note/overflow/padding_bottom_disappeared.html"></iframe>
+
+
+
+
+</li>
+</ul>
+
+      
+    </div>
+  </div>
+  
+    
+  <nav id="article-nav" class="article-nav-wrap">
+    
+      <a href="/2017/11/07/CSS学习笔记-一-Hello CSS/" id="article-nav-older" class="article-nav-link-wrap" style="float:left;">
+        <strong class="article-nav-caption">上一篇:</strong>
+        <span class="article-nav-title">
+          CSS学习笔记(一): Hello CSS
+        </span>
+      </a>
+      
+        
+          <a href="/2018/09/22/chrome-devtool-远程调试iOS网页/" id="article-nav-newer" class="article-nav-link-wrap" style="float:right;">
+            <strong class="article-nav-caption">下一篇:</strong>
+            <span class="article-nav-title">
+              
+                chrome-devtool 远程调试iOS网页
+                  
+            </span>
+          </a>
+          
+
+  </nav>
+  
+  
+  <br>
+</article>
+
+
+
+</div>
+<div class="col-md-3 col-sm-3  sidebar-wrap wrapper">
+  <div class="blog-sidebar sub-wrapper">
+    <div class="scroller">
+      <div class="nav">
+  <a href="/">博客首页</a>
+  <span class="sep"></span>
+  <a href="https://www.betterliyu.site">我的主页</a>
+</div>
+
+<!-- CATEGORIES START -->
+<h2 class="no-top-space">分类</h2>
+
+<div class="widget-wrap">
+  <div class="widget">
+    <ul class="sidebar-categories-list"><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/CSS/">CSS</a><span class="sidebar-categories-list-count">2</span></li><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/JavaScript/">JavaScript</a><span class="sidebar-categories-list-count">2</span></li><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/个人项目/">个人项目</a><span class="sidebar-categories-list-count">1</span></li><li class="sidebar-categories-list-item"><a class="sidebar-categories-list-link" href="/categories/开发工具/">开发工具</a><span class="sidebar-categories-list-count">1</span></li></ul>
+  </div>
+</div>
+
+
+<!-- CATEGORIES END -->
+
+<!-- BEGIN BLOG TAGS -->
+<div class="blog-tags margin-bottom-20">
+  <h2>标签</h2>
+  
+  <div class="widget-wrap">
+    <div class="widget">
+      
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/AngularJS/"><i class="fa fa-tags"></i>AngularJS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/CSS/"><i class="fa fa-tags"></i>CSS</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/chrome-devtool/"><i class="fa fa-tags"></i>chrome devtool</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/debug/"><i class="fa fa-tags"></i>debug</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/timespinner/"><i class="fa fa-tags"></i>timespinner</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/函数式编程/"><i class="fa fa-tags"></i>函数式编程</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/柯里化/"><i class="fa fa-tags"></i>柯里化</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/"><i class="fa fa-tags"></i>移动端</a></li></ul>
+    </div>
+  </div>
+
+
+</div>
+<!-- END BLOG TAGS -->
+
+
+<!-- BEGIN FEATURED POSTS -->                            
+<h2>精选</h2>
+<div class="recent-news margin-bottom-10">
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+        
+        <div class="col-md-12">
+          <h3><a href="/2017/11/02/bwidget-timespinner配置文档/">bwidget-timespinner配置文档</a></h3>
+        </div>    
+                            
+      </div>
+    
+  
+    
+  
+    
+  
+    
+      <div class="row margin-bottom-10">
+        
+        <div class="col-md-12">
+          <h3><a href="/2017/07/15/AngularJS学习笔记-Provider和Service/">AngularJS学习笔记：Provider和Service</a></h3>
+        </div>    
+                            
+      </div>
+    
+  
+    
+  
+</div>
+
+
+  <h2 class="toc-title">目录</h2>
+  <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow-基本概念"><span class="toc-text">overflow 基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#overflow-x-和-overflow-y-IE8"><span class="toc-text">overflow-x 和 overflow-y (IE8+)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#前提条件"><span class="toc-text">前提条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#viewport-html-和-body-的overflow"><span class="toc-text">viewport, html 和 body 的overflow</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow-与滚动条"><span class="toc-text">overflow 与滚动条</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#滚动条的样式在各个浏览器中有一定的差异。"><span class="toc-text">滚动条的样式在各个浏览器中有一定的差异。</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自定义滚动条"><span class="toc-text">自定义滚动条</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#webkit"><span class="toc-text">webkit</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IE"><span class="toc-text">IE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#javascript-控制滚动"><span class="toc-text">javascript 控制滚动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#竖直滚动条导致固定宽度水平居中跳动的问题"><span class="toc-text">竖直滚动条导致固定宽度水平居中跳动的问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow-与-BFC"><span class="toc-text">overflow 与 BFC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#清除浮动"><span class="toc-text">清除浮动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#避免-margin-穿透"><span class="toc-text">避免 margin 穿透</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#两栏自适应布局"><span class="toc-text">两栏自适应布局</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow-与-absolute-绝对定位"><span class="toc-text">overflow 与 absolute 绝对定位</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#overflow-其他小技巧和问题"><span class="toc-text">overflow 其他小技巧和问题</span></a></li></ol>
+    <div class="highlight-title"></div>
+  </div>
+
+    </div>
+  </div>
+</div>
+</div>
+
+  </section>
+</div>
+
+  </main>
+  <aside class="site-search">
+<div data-overlay id="algoliaSearch">
+  <div class="modal-content algolia-popup popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <span class="algolia-logo algolia-powered">
+      <a href="https://www.algolia.com/" target="_blank">
+				<img src="/img/algolia-logo.png" alt="Algolia">
+			</a>
+    </span>
+  </div>
+  </div>
+</aside>
+
+  <aside class="wechat-qr-code">
+  <div data-overlay id="wechatQRCcode">
+    <div class="modal-content wechat-modal-content wechat">
+      <i class="close fa fa-close" id="hideWeChat"></i>
+      <img src="/img/wechat-qr-code.jpeg" class="qr-code">
+    </div>
+  </div>
+</aside>
+  <footer class="footer">
+  <div class="container">
+    <div class="copyright">
+      <a href class="u-logo">
+        <img src="/img/logos/logo.svg" alt="BetterLiyu">
+      </a>
+      <span class="text">© 2018 Li Yu</span>
+      <span class="text powered">Powered by <a href="https://hexo.io" target="_blank">Hexo</a></span>
+      <span class="text powered"><span>Hosted by <a href="https://pages.github.com/" target="_blank">Github Pages</a></span></span>
+    </div>
+    <div class="contact">
+      <ul class="list">
+        <li class="item">
+          <a href="https://github.com/betterliyu" target="_blank" title="betterliyu">
+          	<img src="/img/github.svg" alt="BetterLiyu">
+          </a>
+        </li>
+        <li class="item">
+          <a href="https://www.linkedin.com/in/betterliyu" target="_blank" title="李雨">
+          	<img src="/img/linkedin.svg" alt="BetterLiyu">
+          </a>
+        </li>
+        <li class="item">
+          <a href="javascript:;" title="liyu3285" id="showWeChat">
+          	<img src="/img/wechat.svg" alt="BetterLiyu">
+          </a>
+        </li>
+        <li class="item">
+          <a href="mailto:liyu@betterliyu.site" title="liyu@betterliyu.site">
+            <img src="/img/email.svg" alt="BetterLiyu">
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="container copy">
+    
+  </div>
+</footer>
+  <!-- BEGIN CORE PLUGINS (REQUIRED FOR ALL PAGES) -->
+<script src="/plugins/jquery.min.js"></script>
+<script src="/plugins/jquery-migrate.min.js"></script>
+<script src="/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script src="/plugins/owl.carousel/owl.carousel.min.js"></script>
+<script src="/js/back-to-top.js"></script>
+<script src="/js/script.js"></script>
+<script src="/js/wechat-code.js"></script>
+<script src="/js/mobile-sidebar.js"></script>
+<script src="/js/layout.js"></script>
+<script src="/js/wow.min.js"></script>
+
+
+
+<script type="text/javascript">
+    jQuery(document).ready(function() {
+        Layout.init();    
+        Layout.initOWL();
+        Layout.initTwitter();
+        if ($('body').hasClass('home')) {
+          Layout.initHeaderScroll();
+          Layout.changeScrollIconDirection();
+        } else {
+          // Layout.initFixHeaderWithPreHeader(); /* Switch On Header Fixing (only if you have pre-header) */
+          // Layout.initNavScrolling(); 
+          Layout.initTocScrolling(); 
+        }
+
+        $('.toc-link').on('click', () => {
+          if($('.sidebar-wrap').hasClass('show')) {
+            $('#mobileMenu').click();
+          }
+        });
+	    new WOW().init();
+    });
+</script>
+<!-- END CORE PLUGINS -->
+
+<!-- BEGIN INTEGRATIONS -->
+
+
+
+    <script src="/plugins/algoliasearch/algoliasearch.jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/instantsearch.js/1.5.1/instantsearch.js"></script>
+    <script>
+        var algolia_config = {
+            root: '/',
+            algolia: {
+            applicationID: '2QMFGDTPT4',
+                apiKey: '290e0d706ec2e78e93dd972abe43a628',
+                indexName: 'blog_index',
+                hits: {"per_page": 15},
+                labels: {"input_placeholder": "搜索文章...","hits_empty":"No results found.","hits_stats":"${hits} records found in ${time} ms"}
+            }
+        };
+    </script>
+    <script src="/js/algolia-search.js"></script>
+
+
+
+
+
+<!-- END INTEGRATIONS -->
+
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+    function CaoNiMaDeUc() {
+        $("a").each(function (index, element) {
+            try {
+                var thishref = $(this).attr("href");
+                var thisText = $(this).html();
+                if (thishref.indexOf("uc.cn") >= 0) {
+                    $(this).replaceWith(thisText);
+                }
+            }
+            catch (e) {
+            }
+        });
+        $("script").each(function (index, element) {
+            try {
+                var thissrc = $(this).attr("src");
+
+                if (thissrc.indexOf("ucbrowser") >= 0) {
+                $(this).remove();
+                }
+            }
+            catch (e) {
+            }
+        });
+    };
+    
+    var pageDATA_ua = window.navigator.userAgent.toLowerCase();
+    if(pageDATA_ua.indexOf('ucbrowser')>=0){setInterval("CaoNiMaDeUc();",1000);}
+});
+</script>
+</body>
+</html>
